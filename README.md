@@ -48,7 +48,9 @@ curl --location --request GET '172.17.0.2:8000/ping'
     "Status": true,
     "Data": "Pong"
 }
+
 ```
+
 - **/upload**
 ```bash
 curl --location --request POST '172.17.0.2:8000/upload' \
@@ -58,6 +60,7 @@ curl --location --request POST '172.17.0.2:8000/upload' \
     "Status": true,
     "Data": "3f7d7db0-8054-445b-b2b3-78cd4b407dda"
 }
+
 ```
 
 - **/pause**
@@ -68,6 +71,7 @@ curl --location --request GET '172.17.0.2:8000/pause?id=3f7d7db0-8054-445b-b2b3-
     "Status": true,
     "Data": "job paused successfully"
 }
+
 ```
 
 - **/resume**
@@ -78,6 +82,7 @@ curl --location --request GET '172.17.0.2:8000/resume?id=3f7d7db0-8054-445b-b2b3
     "Status": true,
     "Data": "job resumed successfully"
 }
+
 ```
 
 - **/terminate**
@@ -88,6 +93,7 @@ curl --location --request GET '172.17.0.2:8000/terminate?id=3f7d7db0-8054-445b-b
     "Status": true,
     "Data": "job paused successfully"
 }
+
 ```
 
 - **/status**
@@ -98,6 +104,7 @@ curl --location --request GET '172.17.0.2:8000/status?id=3f7d7db0-8054-445b-b2b3
     "Status": true,
     "Data": "Terminated"
 }
+
 ```
 ## Development
 
