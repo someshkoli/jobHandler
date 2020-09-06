@@ -1,5 +1,6 @@
 # This file runs on vscode to make request calls.
 # Install the REST client extention to get started
+# Currently unstable
 
 @id = 37a563eb-c782-450d-b1f9-9bdce54b833a
 http://localhost:8000/ping

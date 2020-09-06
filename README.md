@@ -1,5 +1,5 @@
 # jobHandler
-An API build on GoLang for long running jobs which can pause, resume and terminate a specific job.
+An API build on GoLang for long running jobs which can pause, resume and terminate a specific job. Currently supports processing large CSV files.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d46c526c14e9beff7940#?env%5BAtlan%20Pipeline%5D=W3sia2V5IjoidXJsIiwidmFsdWUiOiIxNzIuMTcuMC4yOjgwMDAiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImlkIiwidmFsdWUiOiJyYW5kb21cIiIsImVuYWJsZWQiOnRydWV9XQ==)
 
@@ -26,11 +26,13 @@ $ $GOPATH/bin/jobHandler
 ### Building and run in Docker
 Build docker image
 ```
-docker build -t jobhandler
+$ docker build -t jobhandler
+OR
+$ docker pull someshkoli/jobhandler
 ```
 Runnin Docker Image
 ```
-docker run -it -p 8080:8000 jobhandler
+$ docker run -it -p 8080:8000 jobhandler
 ```
 
 
@@ -44,7 +46,9 @@ curl --location --request GET '172.17.0.2:8000/ping'
     "Status": true,
     "Data": "Pong"
 }
+
 ```
+
 - **/upload**
 ```bash
 curl --location --request POST '172.17.0.2:8000/upload' \
@@ -54,6 +58,7 @@ curl --location --request POST '172.17.0.2:8000/upload' \
     "Status": true,
     "Data": "3f7d7db0-8054-445b-b2b3-78cd4b407dda"
 }
+
 ```
 
 - **/pause**
@@ -64,6 +69,7 @@ curl --location --request GET '172.17.0.2:8000/pause?id=3f7d7db0-8054-445b-b2b3-
     "Status": true,
     "Data": "job paused successfully"
 }
+
 ```
 
 - **/resume**
@@ -74,6 +80,7 @@ curl --location --request GET '172.17.0.2:8000/resume?id=3f7d7db0-8054-445b-b2b3
     "Status": true,
     "Data": "job resumed successfully"
 }
+
 ```
 
 - **/terminate**
@@ -84,6 +91,7 @@ curl --location --request GET '172.17.0.2:8000/terminate?id=3f7d7db0-8054-445b-b
     "Status": true,
     "Data": "job paused successfully"
 }
+
 ```
 
 - **/status**
@@ -94,6 +102,7 @@ curl --location --request GET '172.17.0.2:8000/status?id=3f7d7db0-8054-445b-b2b3
     "Status": true,
     "Data": "Terminated"
 }
+
 ```
 ## Development
 
