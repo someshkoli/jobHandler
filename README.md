@@ -1,5 +1,5 @@
 # jobHandler
-An API build on GoLang for long running jobs which can pause, resume and terminate a specific job.
+An API build on GoLang for long running jobs which can pause, resume and terminate a specific job. Currently supports processing large CSV files.
 
 ## Table of Content
 - [jobHandler](#jobhandler)
