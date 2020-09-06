@@ -1,6 +1,8 @@
 # jobHandler
 An API build on GoLang for long running jobs which can pause, resume and terminate a specific job.
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d46c526c14e9beff7940#?env%5BAtlan%20Pipeline%5D=W3sia2V5IjoidXJsIiwidmFsdWUiOiIxNzIuMTcuMC4yOjgwMDAiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImlkIiwidmFsdWUiOiJyYW5kb21cIiIsImVuYWJsZWQiOnRydWV9XQ==)
+
 ## Table of Content
 - [jobHandler](#jobhandler)
   - [Table of Content](#table-of-content)
@@ -33,10 +35,6 @@ docker run -it -p 8080:8000 jobhandler
 
 
 ## Usage
-- The server by default serves at http port 8000
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d46c526c14e9beff7940#?env%5BAtlan%20Pipeline%5D=W3sia2V5IjoidXJsIiwidmFsdWUiOiIxNzIuMTcuMC4yOjgwMDAiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImlkIiwidmFsdWUiOiJyYW5kb21cIiIsImVuYWJsZWQiOnRydWV9XQ==)
-
 ### Endpoints
 - **/ping**
 ```bash
