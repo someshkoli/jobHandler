@@ -24,11 +24,13 @@ $ $GOPATH/bin/jobHandler
 ### Building and run in Docker
 Build docker image
 ```
-docker build -t jobhandler
+$ docker build -t jobhandler
+OR
+$ docker pull someshkoli/jobhandler
 ```
 Runnin Docker Image
 ```
-docker run -it -p 8080:8000 jobhandler
+$ docker run -it -p 8080:8000 jobhandler
 ```
 
 
