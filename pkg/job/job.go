@@ -22,10 +22,10 @@ const (
 // Job - Job represents a single entity of a job
 type Job struct {
 	sync.Mutex
-	ID        string    `json:"ID"`
-	Ts        time.Time `json:"Ts"`
-	State     Status    `json:"State"`
-	Data      []string  `json:"Data"`
+	ID        string   `json:"ID"`
+	Ts        string   `json:"Ts"`
+	State     Status   `json:"State"`
+	Data      []string `json:"Data"`
 	Err       error
 	pause     chan struct{}
 	resume    chan struct{}
@@ -34,10 +34,12 @@ type Job struct {
 
 // MakeJob - Initiates the job
 func MakeJob(data []string) Job {
+	id := uuid.New().String()
+	time := time.Now().Format("2 Jan 2006 15:04:05")
 	job := Job{
-		ID:        uuid.New().String(),
+		ID:        id,
 		State:     Initialized,
-		Ts:        time.Now(),
+		Ts:        time,
 		Data:      data,
 		pause:     make(chan struct{}),
 		resume:    make(chan struct{}),

@@ -1,0 +1,22 @@
+# This file runs on vscode to make request calls.
+# Install the REST client extention to get started
+
+@id = 37a563eb-c782-450d-b1f9-9bdce54b833a
+http://localhost:8000/ping
+
+###
+POST http://localhost:8000/upload
+Content-Type: "text/csv"
+
+< ./test.csv
+###
+http://localhost:8000/pause?id={{id}}
+
+###
+http://localhost:8000/resume?id={{id}}
+
+###
+http://localhost:8000/terminate?id={{id}}
+
+###
+http://localhost:8000/status?id={{id}}

@@ -20,6 +20,7 @@ func (JH *JobHandler) ping(res http.ResponseWriter, req *http.Request) {
 
 // upload - Handler for /upload
 // starts upload job
+// TODO: add check for persistent storage in future
 func (JH *JobHandler) upload(res http.ResponseWriter, req *http.Request) {
 	res.Header().Add("Content-Type", "application/json")
 	var buf bytes.Buffer
@@ -61,6 +62,8 @@ func (JH *JobHandler) pause(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	// TODO: add check for persistent storage in future
+
 	if j.State == job.Terminated || j.State == job.Done {
 		respond(res, "Job has status "+string(j.State)+", cannot pause", false, http.StatusBadRequest)
 		return
@@ -85,6 +88,9 @@ func (JH *JobHandler) resume(res http.ResponseWriter, req *http.Request) {
 		respond(res, "Job id not found in running job pool or cache", false, http.StatusBadRequest)
 		return
 	}
+
+	// TODO: add check for persistent storage in future
+
 	if j.State == job.Terminated || j.State == job.Done {
 		respond(res, "Job has status "+string(j.State)+", cannot resume", false, http.StatusBadRequest)
 		return
